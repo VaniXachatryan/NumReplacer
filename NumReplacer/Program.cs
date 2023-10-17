@@ -1,9 +1,10 @@
-﻿using NumReplacer.Strategy;
+﻿using NumReplacer.Interfaces;
+using NumReplacer.Strategy;
 
 List<int> elements = new() {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 60, 105, 420};
 
 string[] result = elements.Select(e => e.ToString()).ToArray();
-ReplaceStrategyContext replaceContext = new ReplaceStrategyContext();
+IStrategyContext replaceContext = new ReplaceStrategyContext();
 
 List<BaseStrategy> strategies = new List<BaseStrategy>();
 
@@ -14,7 +15,7 @@ strategies.Add(new BuzzBaseStrategy(elements));
 foreach (var strategy in strategies)
 {
     replaceContext.SetStrategy(strategy);
-    result = replaceContext.Replace(result.ToList());
+    result = replaceContext.Execute(result.ToList());
 }
 Console.WriteLine("{0}", string.Join(", ", result));
 
@@ -25,7 +26,7 @@ strategies.Add(new GuzzBaseStrategy(elements));
 foreach (var strategy in strategies)
 {
     replaceContext.SetStrategy(strategy);
-    result = replaceContext.Replace(result.ToList());
+    result = replaceContext.Execute(result.ToList());
 }
 Console.WriteLine("{0}", string.Join(", ", result));
 
@@ -37,7 +38,7 @@ strategies.Add(new GoodBoyBaseStrategy(elements));
 foreach (var strategy in strategies)
 {
     replaceContext.SetStrategy(strategy);
-    result = replaceContext.Replace(result.ToList());
+    result = replaceContext.Execute(result.ToList());
 }
 
 Console.WriteLine("{0}", string.Join(", ", result));

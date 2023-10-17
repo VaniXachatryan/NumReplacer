@@ -2,13 +2,8 @@ namespace NumReplacer.Strategy;
 
 public class GoodBoyBaseStrategy : BaseStrategy
 {
-    private BaseStrategy _dogBaseStrategy;
-    private BaseStrategy _catBaseStrategy;
-    
     public GoodBoyBaseStrategy(List<int> elements) : base(elements)
     {
-        _dogBaseStrategy = new DogBaseStrategy(elements);
-        _catBaseStrategy = new CatBaseStrategy(elements);
     }
     
     public override string[] Replace(string[] elements, int? value)

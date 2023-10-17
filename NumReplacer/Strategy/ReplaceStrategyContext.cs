@@ -1,9 +1,11 @@
+using NumReplacer.Interfaces;
+
 namespace NumReplacer.Strategy;
 
-public class ReplaceStrategyContext
+public class ReplaceStrategyContext : IStrategyContext
 {
     private BaseStrategy _baseStrategy;
-    private List<string> _result;
+    private List<string> _result = new();
 
     public ReplaceStrategyContext()
     {
@@ -12,7 +14,7 @@ public class ReplaceStrategyContext
     public void SetStrategy(BaseStrategy baseStrategy)
         => _baseStrategy = baseStrategy;
 
-    public string[] Replace(List<string> elements)
+    public string[] Execute(List<string> elements)
     {
         _result = new List<string>();
         

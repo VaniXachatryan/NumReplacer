@@ -2,7 +2,7 @@ namespace NumReplacer.Strategy;
 
 public abstract class BaseStrategy
 {
-    public int[] Elements;
+    public readonly int[] Elements;
 
     protected BaseStrategy(List<int> elements)
     {
