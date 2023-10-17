@@ -2,15 +2,15 @@ namespace NumReplacer.Strategy;
 
 public class ReplaceStrategyContext
 {
-    private Strategy _strategy;
+    private BaseStrategy _baseStrategy;
     private List<string> _result;
 
     public ReplaceStrategyContext()
     {
     }
 
-    public void SetStrategy(Strategy strategy)
-        => _strategy = strategy;
+    public void SetStrategy(BaseStrategy baseStrategy)
+        => _baseStrategy = baseStrategy;
 
     public string[] Replace(List<string> elements)
     {
@@ -19,8 +19,8 @@ public class ReplaceStrategyContext
         int indexElement = 0;
         foreach (var element in elements)
         {
-            int value = _strategy.Elements[indexElement];
-            string[] replaced = _strategy.Replace(new string[] { element }, value);
+            int value = _baseStrategy.Elements[indexElement];
+            string[] replaced = _baseStrategy.Replace(new string[] { element }, value);
             if (replaced.Length > 1)
             {
                 int indexValue = Array.IndexOf(replaced, value.ToString());

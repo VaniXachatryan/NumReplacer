@@ -1,10 +1,10 @@
 namespace NumReplacer.Strategy;
 
-public abstract class Strategy
+public abstract class BaseStrategy
 {
     public int[] Elements;
 
-    protected Strategy(List<int> elements)
+    protected BaseStrategy(List<int> elements)
     {
         Elements = elements.ToArray();
     }
