@@ -20,11 +20,8 @@ public class GoodBoyBaseStrategy : BaseStrategy
                           && value % Constants.MUZZ == 0
                           && value % Constants.GUZZ == 0)
         {
-
-            int indexDog = Array.IndexOf(Elements.ToArray(), (int)value);
-            if (value % indexDog != -1)
+            if (IsExistValue(value))
                 elements = elements.Prepend("good-boy").ToArray();
-            
         } else if (value != null && value % Constants.CAT == 0 && value % Constants.DOG == 0)
             elements = new string[] { "good-boy" };
 

@@ -10,4 +10,7 @@ public abstract class BaseStrategy
     }
 
     public abstract string[] Replace(string[] elements, int? value);
+
+    protected bool IsExistValue(int? value)
+        => Elements.Any(e => e == value);
 }

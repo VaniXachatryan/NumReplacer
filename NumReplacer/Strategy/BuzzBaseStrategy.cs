@@ -8,8 +8,7 @@ public class BuzzBaseStrategy : BaseStrategy
     
     public override string[] Replace(string[] elements, int? value)
     {
-        int index = Array.IndexOf(Elements, value);
-        if (value != null && value % Constants.BUZZ == 0 && index != -1)
+        if (value != null && value % Constants.BUZZ == 0 && IsExistValue(value))
             elements = elements.Append(nameof(Constants.BUZZ)).ToArray();
         
         return elements;

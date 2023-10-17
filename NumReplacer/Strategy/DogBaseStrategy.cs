@@ -8,8 +8,7 @@ public class DogBaseStrategy : BaseStrategy
     
     public override string[] Replace(string[] elements, int? value)
     {
-        int indexDog = Array.IndexOf(Elements, value);
-        if (value != null && value % Constants.DOG == 0 && indexDog != -1)
+        if (value != null && value % Constants.DOG == 0 && IsExistValue(value))
             elements = new string[] { "dog" };
         
         return elements;

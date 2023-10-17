@@ -8,8 +8,7 @@ public class CatBaseStrategy : BaseStrategy
     
     public override string[] Replace(string[] elements, int? value)
     {
-        int indexCat = Array.IndexOf(Elements, value);
-        if (value != null && value % Constants.CAT == 0 && indexCat != -1)
+        if (value != null && value % Constants.CAT == 0 && IsExistValue(value))
             elements = new string[] { "cat" };
         
         return elements;
