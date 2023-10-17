@@ -1,10 +1,10 @@
 namespace NumReplacer.Strategy;
 
-public class GuzzStrategy : Strategy
+public class GuzzBaseStrategy : BaseStrategy
 {
     private List<string> result = new();
 
-    public GuzzStrategy(List<int> elements) : base(elements)
+    public GuzzBaseStrategy(List<int> elements) : base(elements)
     {
     }
     

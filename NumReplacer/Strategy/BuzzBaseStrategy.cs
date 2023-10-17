@@ -1,8 +1,8 @@
 namespace NumReplacer.Strategy;
 
-public class BuzzStrategy : Strategy
+public class BuzzBaseStrategy : BaseStrategy
 {
-    public BuzzStrategy(List<int> elements) : base(elements)
+    public BuzzBaseStrategy(List<int> elements) : base(elements)
     {
     }
     

@@ -1,8 +1,8 @@
 namespace NumReplacer.Strategy;
 
-public class CatStrategy : Strategy
+public class CatBaseStrategy : BaseStrategy
 {
-    public CatStrategy(List<int> elements) : base(elements)
+    public CatBaseStrategy(List<int> elements) : base(elements)
     {
     }
     

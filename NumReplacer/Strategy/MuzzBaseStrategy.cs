@@ -1,8 +1,8 @@
 namespace NumReplacer.Strategy;
 
-public class MuzzStrategy : Strategy
+public class MuzzBaseStrategy : BaseStrategy
 {
-    public MuzzStrategy(List<int> elements) : base(elements)
+    public MuzzBaseStrategy(List<int> elements) : base(elements)
     {
     }
     

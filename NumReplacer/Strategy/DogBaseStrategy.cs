@@ -1,8 +1,8 @@
 namespace NumReplacer.Strategy;
 
-public class DogStrategy : Strategy
+public class DogBaseStrategy : BaseStrategy
 {
-    public DogStrategy(List<int> elements) : base(elements)
+    public DogBaseStrategy(List<int> elements) : base(elements)
     {
     }
     
